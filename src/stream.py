@@ -1,11 +1,11 @@
-import streamlit as st
 import numpy as np
 import pandas as pd
-import folium
 from pickle import load
+import folium
+import stream as st
 from streamlit_folium import folium_static
 
-model = load(open("../Models/.sav", "rb"))
+model = load(open("../Models/vecinos_default_42.sav.sav", "rb"))
 
 st.title("Predicción de Caída de Meteoritos")
 
