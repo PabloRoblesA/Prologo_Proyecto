@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from pickle import load
 import folium
-import stream as st
+import app as st
 from streamlit_folium import folium_static
 
 model = load(open("../Models/vecinos_default_42.sav.sav", "rb"))
