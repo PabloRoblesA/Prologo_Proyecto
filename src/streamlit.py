@@ -5,7 +5,6 @@ import folium
 from pickle import load
 from streamlit_folium import folium_static
 
-# Cargar el modelo
 model = load(open("../Models/.sav", "rb"))
 
 st.title("Predicción de Caída de Meteoritos")
@@ -17,13 +16,11 @@ reclong = st.number_input("Ingrese la longitud:",
 
 if st.button("Predecir caída de meteorito"):
     features = np.array([[reglat, reclong]])
-
     prediction = model.predict(features)[0]
 
     st.write(f"Predicción: {prediction}")
 
     geoprediction = folium.Map(location=[reglat, reclong], zoom_start=10)
-
     folium.Marker([reglat, reclong], popup=f"Predicción: {
                   prediction}").add_to(geoprediction)
 
