@@ -35,7 +35,7 @@ HeatMap(data).add_to(m)
 
 if st.button("Predecir caída de meteorito"):
 
-    file_path = 'Models\vecinos_default_42.sav'
+    file_path = 'Models/vecinos_default_42.sav'
     with open(file_path, 'rb') as file:
         vecinos_default_42 = pickle.load(file)
     features = np.array([[reclat, reclong]])
