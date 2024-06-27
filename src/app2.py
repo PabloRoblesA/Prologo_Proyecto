@@ -22,9 +22,26 @@ def cargar_modelo(file_path):
         modelo = pickle.load(file)
     return modelo
 
-def show_cover():
-    cover_image = Image.open("")
-    st.image(cover_image, use_column_width=True)
+import base64
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def set_background(jpg_file):
+    bin_str = get_base64_of_bin_file(jpg_file)
+    page_bg_img = f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpeg;base64,{bin_str}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+    </style>
+    """
+    st.markdown(page_bg_img, unsafe_allow_html=True)
+set_background('Image_App.jpg')
 
 vecinos_default_42 = cargar_modelo('../Models/vecinos_default_42.sav')
 
