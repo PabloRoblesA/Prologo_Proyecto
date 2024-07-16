@@ -59,7 +59,7 @@ HeatMap(data).add_to(m)
 
 if st.button("Predecir caída de meteorito"):
     features = np.array([[reclat, reclong]])
-    prediction = vecinos_default_42.predict(features)[0]
+    prediction = vecinos_default_42.prediction(features)[0]
     st.write(f"Predicción: {prediction}")
 
 
