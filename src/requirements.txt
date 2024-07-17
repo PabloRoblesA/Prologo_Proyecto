@@ -25,3 +25,4 @@ earthpy
 shapely
 folium
 streamlit
+streamlit-folium
