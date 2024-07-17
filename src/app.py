@@ -1,4 +1,5 @@
 #Atajo de apertura de visualizacion en Streamlit
+# Link de app por Render: https://starsafe-0-1.onrender.com/
 import streamlit as st
 import pandas as pd
 import numpy as np
